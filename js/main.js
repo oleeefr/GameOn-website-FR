@@ -1,4 +1,4 @@
-import {editNav, modalbg, modalBtn, formData, launchModal} from './_modal.js';
+import {editNav, modalbg, modalBtn, formData, launchModal} from './modal.js';
 
 
 
