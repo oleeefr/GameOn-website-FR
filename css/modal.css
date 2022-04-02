@@ -221,7 +221,17 @@ input {
   transition: 0.3s;
 }
 .formData[data-error-visible="true"]::after {
+  content: attr(data-error);
+  font-size: 14px;
+  font-weight: normal;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: start;
+  line-height: 1;
   opacity: 1;
+  transition: 0.3s;
 }
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
