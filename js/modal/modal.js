@@ -26,6 +26,8 @@ export function launchModal() {
 
 export function closeModal() {
   modalbg.style.display = "none";
+  modalMessageConfirm.style.display = "none";
+  form.style.display = "block";
   form.reset();
 }
 
