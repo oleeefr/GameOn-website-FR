@@ -16,10 +16,17 @@ export const form = document.querySelector(".modalForm");
 export const inputsForm = document.querySelectorAll("input");
 export const inputRadioGrp = document.querySelectorAll("input[name=location]");
 export const menu = document.querySelector(".icon");
+export const modalMessageConfirm = document.querySelector(".message-confirmation");
+export const closeModalBtn = document.querySelectorAll("button[name=closeButton]");
 
 // launch modal formm
 export function launchModal() {
   modalbg.style.display = "block";
+}
+
+export function closeModal() {
+  modalbg.style.display = "none";
+  form.reset();
 }
 
 

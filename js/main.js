@@ -1,5 +1,5 @@
 // Importation des elements du DOM de la modal formulaire
-import {editNav, menu, form, modalBtn, launchModal} from './modal/modal.js';
+import {editNav, menu, form, modalBtn, launchModal, modalMessageConfirm, closeModalBtn, closeModal} from './modal/modal.js';
 
 // Importation du contrôle du formulaire
 import {validFields} from './modal/validFields.js';
@@ -7,12 +7,19 @@ import {validFields} from './modal/validFields.js';
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
+// Close modal event
+closeModalBtn.forEach((btn) => btn.addEventListener("click", closeModal));
+
 //menu responsive du site
 menu.onclick = () => {editNav()};
 
 // lancement de la validation du formulaire
 form.onsubmit = (e) => {
   e.preventDefault();
-  return validFields();
+  if(validFields()) {
+    form.reset();
+    form.style.display = "none";
+    modalMessageConfirm.style.display = "grid";
+  };
 }
 

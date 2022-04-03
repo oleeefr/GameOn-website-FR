@@ -52,7 +52,7 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close" onclick="closeModal()"></span>
+          <button class="close" name="closeButton" onclick="closeModal()"></button>
           <div class="modal-body">
             <form
               name="reserve"
@@ -204,6 +204,12 @@
                 value="C'est parti"
               />
             </form>
+            <div class="message-confirmation">
+                <p>Merci ! Votre réservation a été reçue.</p>
+                <button class="btn-signup modal-btn" name="closeButton">
+                  fermer
+                </button>
+            </div>
           </div>
         </div>
       </div>
