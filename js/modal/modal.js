@@ -19,11 +19,12 @@ export const menu = document.querySelector(".icon");
 export const modalMessageConfirm = document.querySelector(".message-confirmation");
 export const closeModalBtn = document.querySelectorAll("button[name=closeButton]");
 
-// launch modal formm
+// launch modal form
 export function launchModal() {
   modalbg.style.display = "block";
 }
 
+// close modal form
 export function closeModal() {
   modalbg.style.display = "none";
   modalMessageConfirm.style.display = "none";
