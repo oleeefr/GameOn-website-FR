@@ -41,8 +41,7 @@ export class ControlCheck {
     // email valide
     // si oui alors renvoie True
     static isEmail (email) {
-        let pattern ="^[a-z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$";
-
+        let pattern ="[\w\W]*@[\w]*.[\w]*";
         return !(email.match(pattern)=== null);
     }
 
@@ -55,5 +54,4 @@ export class ControlCheck {
         let pattern ="^([123]0|[012][1-9]|31)\/(0[1-9]|1[012])\/(19[0-9]{2}|2[0-9]{3})$";
         return !(dateObject.match(pattern)=== null);
     }
-
 }

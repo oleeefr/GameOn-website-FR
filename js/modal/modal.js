@@ -42,6 +42,8 @@ export function messageInfo (input, valid) {
   input.parentElement.setAttribute("data-error-visible", visible);
 }
 
+// function permettant la réinitialisation des messages d'erreur
+// des champs du formualire à false
 function initMessageinfo () {
   let visible = false;
   inputsForm.forEach(element => { 
