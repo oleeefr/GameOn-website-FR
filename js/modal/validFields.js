@@ -3,7 +3,7 @@
 import {ControlCheck} from '../utils/ControlCheck.js';
 
 //Importation des entrées du formulaire
-import {inputsForm,inputRadioGrp} from './modal.js';
+import {inputsForm, inputRadioGrp, messageInfo} from './modal.js';
 
 // Fonction permettant de valider un champ à partir des régles de restriction
 // Prend en entrée un objet input & renvoie un booléen
@@ -17,27 +17,27 @@ function checkPerField (input) {
 
                     case 'first':
                         valid = ControlCheck.minCharacter(input.value,2);
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
 
                     case 'last':
                         valid = ControlCheck.minCharacter(input.value,2);
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
 
                     case 'email':
                         valid = ControlCheck.isEmail(input.value);
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
 
                     case 'birthdate':
                         valid = ControlCheck.isDateValid(input.value);
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
 
                     case 'quantity':
                         valid = ControlCheck.isPositive(input.value);
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
                 }
                 break
@@ -46,16 +46,15 @@ function checkPerField (input) {
                 switch (input.name) {
                     case 'location':
                         valid = validRadioFields();
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
 
                     case 'condition':
                         if (!input.checked) valid = false;
-                        if (!valid) input.parentElement.setAttribute("data-error-visible", true);
+                        messageInfo(input, valid);
                         break
                 }   
-                break
-           
+                break          
         }
         return valid;
 };

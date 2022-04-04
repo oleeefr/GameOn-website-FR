@@ -4,9 +4,7 @@ export class ControlCheck {
     // Méthode static permettant de controler si l'argument est un nombre
     // si oui alors renvoie true
     static isNumber (number) {
-        /*
-        if(parseInt(number)==='NaN') return false;
-        return true;*/
+
         return !(parseInt(number)==='NaN');
     }
 
@@ -35,9 +33,7 @@ export class ControlCheck {
     // minimum min
     // si oui alors renvoie True
     static minCharacter (string, min) {
-        /*
-        if (string.length>= min) return false;
-        return true; */
+
         return string.length>= min;
     }
 
@@ -46,9 +42,7 @@ export class ControlCheck {
     // si oui alors renvoie True
     static isEmail (email) {
         let pattern ="^[a-z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$";
-        /*
-        if (email.match(pattern)=== null) return false;
-        return true; */
+
         return !(email.match(pattern)=== null);
     }
 

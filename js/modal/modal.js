@@ -1,3 +1,4 @@
+// fonction pour le resposive de la bar de menu
 export function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,11 +8,9 @@ export function editNav() {
   }
 }
 
-// DOM Elements
+// Selection de DOM Elements
 export const modalbg = document.querySelector(".bground");
 export const modalBtn = document.querySelectorAll(".modal-btn");
-// export const formData = document.querySelectorAll(".formData");
-
 export const form = document.querySelector(".modalForm");
 export const inputsForm = document.querySelectorAll("input");
 export const inputRadioGrp = document.querySelectorAll("input[name=location]");
@@ -29,7 +28,25 @@ export function closeModal() {
   modalbg.style.display = "none";
   modalMessageConfirm.style.display = "none";
   form.style.display = "block";
+  initMessageinfo();
   form.reset();
+}
+
+
+// function permettant l'affichage du message d'erreur
+// pour un champ de formulaire
+// prend en entrée un objet input & un booléen
+export function messageInfo (input, valid) {
+  let visible = false;
+  if (!valid) visible = true;
+  input.parentElement.setAttribute("data-error-visible", visible);
+}
+
+function initMessageinfo () {
+  let visible = false;
+  inputsForm.forEach(element => { 
+    element.parentElement.setAttribute("data-error-visible", visible);
+  });
 }
 
 
