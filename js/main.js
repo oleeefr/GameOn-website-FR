@@ -1,5 +1,14 @@
 // Importation des elements du DOM de la modal formulaire
-import {editNav, menu, form, modalBtn, launchModal, modalMessageConfirm, closeModalBtn, closeModal} from './modal/modal.js';
+import  {editNav, 
+         menu, 
+         form, 
+         modalBtn, 
+         launchModal, 
+         modalMessageConfirm, 
+         closeModalBtn,
+         reinitialisationFormulaire, 
+         closeModal 
+        } from './modal/modal.js';
 
 // Importation du contrôle du formulaire
 import {validFields} from './modal/validFields.js';
@@ -17,7 +26,7 @@ menu.onclick = () => {editNav()};
 form.onsubmit = (e) => {
   e.preventDefault();
   if(validFields()) {
-    form.reset();
+    reinitialisationFormulaire();
     form.style.display = "none";
     modalMessageConfirm.style.display = "grid";
   };

@@ -28,8 +28,7 @@ export function closeModal() {
   modalbg.style.display = "none";
   modalMessageConfirm.style.display = "none";
   form.style.display = "block";
-  initMessageinfo();
-  form.reset();
+  reinitialisationFormulaire();
 }
 
 
@@ -49,6 +48,13 @@ function initMessageinfo () {
   inputsForm.forEach(element => { 
     element.parentElement.setAttribute("data-error-visible", visible);
   });
+}
+
+
+// function permettant la réiniatialisation du formulaire.
+export function reinitialisationFormulaire () {
+  initMessageinfo();
+  form.reset();
 }
 
 
