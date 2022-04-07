@@ -1,0 +1,18 @@
+{
+  "name": "p4",
+  "version": "1.0.0",
+  "description": "gameone web sit",
+  "scripts": {
+    "build":"webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oleeefr/GameOn-website-FR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/oleeefr/GameOn-website-FR#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  }
+}
